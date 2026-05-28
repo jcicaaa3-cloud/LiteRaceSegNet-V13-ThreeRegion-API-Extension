@@ -1,6 +1,10 @@
 ﻿<p align="center">
   <img src="./assets/profile-main-poster.png" alt="LiteRaceSegNet and TRACE-Eval research poster" width="100%">
 </p>
+<p align="center">
+  <img src="./assets/lrs-v11-cover.png" alt="LiteRaceSegNet V13 and TRACE-Eval project cover" width="100%">
+</p>
+
 # LiteRaceSegNet V13 Three-Region API Extension
 
 JSON-locked three-region visualization extension for LiteRaceSegNet v13.
@@ -96,4 +100,5 @@ Extension repository:
 ```text
 https://github.com/jcicaaa3-cloud/LiteRaceSegNet-V13-ThreeRegion-API-Extension
 ```
+
 
