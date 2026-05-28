@@ -1,0 +1,101 @@
+{
+  "schema_version": "v13_three_region_visualization_0.1",
+  "request_id": "smoke_three_region",
+  "source_model_version": "v13",
+  "compatibility_baseline": "v11_json_contract_locked",
+  "compatibility_mode": "separate_extension_json",
+  "postprocess_basis": "v13_binary_mask_with_morphology_heuristics",
+  "files": {
+    "crack_mask_path": "runtime_api/requests/smoke_three_region/output/crack_mask.png",
+    "major_damage_mask_path": "runtime_api/requests/smoke_three_region/output/major_damage_mask.png",
+    "suspected_mask_path": "runtime_api/requests/smoke_three_region/output/suspected_mask.png",
+    "three_region_overlay_path": "runtime_api/requests/smoke_three_region/output/three_region_overlay.png",
+    "v13_visualization_json_path": "runtime_api/requests/smoke_three_region/v13_visualization.json"
+  },
+  "inputs": {
+    "input_image_path": "runtime_api/requests/smoke_three_region/input/input.jpg",
+    "binary_mask_path": "runtime_api/requests/smoke_three_region/output/input_service_mask.png",
+    "raw_pred_class_path": "runtime_api/requests/smoke_three_region/raw_model_output/input_pred_class.png",
+    "probability_source_path": null
+  },
+  "region_summary": {
+    "image_pixels": 38400,
+    "binary_damage_pixels": 3070,
+    "binary_damage_area_ratio": 0.07994792,
+    "crack_pixels": 258,
+    "crack_area_ratio": 0.00671875,
+    "major_damage_pixels": 2782,
+    "major_damage_area_ratio": 0.07244792,
+    "suspected_pixels": 1505,
+    "suspected_area_ratio": 0.03919271
+  },
+  "component_summary_top20": [
+    {
+      "area_pixels": 3040,
+      "bbox_xywh": [
+        25,
+        55,
+        186,
+        58
+      ],
+      "centroid_xy": [
+        171.89,
+        84.78
+      ],
+      "aspect_ratio": 3.206896551724138,
+      "fill_ratio": 0.2817945865776789,
+      "skeleton_pixels": 267,
+      "mean_width_est_px": 11.385767790262172,
+      "max_width_est_px": 55.38999938964844,
+      "perimeter_pixels": 457.7645001411438,
+      "compactness": 0.18230527193440896,
+      "region": "mixed_major_blob_with_crack_like_thin_parts"
+    },
+    {
+      "area_pixels": 30,
+      "bbox_xywh": [
+        40,
+        35,
+        6,
+        5
+      ],
+      "centroid_xy": [
+        42.5,
+        37.0
+      ],
+      "aspect_ratio": 1.2,
+      "fill_ratio": 1.0,
+      "skeleton_pixels": 10,
+      "mean_width_est_px": 3.0,
+      "max_width_est_px": 5.730000019073486,
+      "perimeter_pixels": 18.0,
+      "compactness": 1.1635528346628863,
+      "region": "suspected_uncertain_component"
+    }
+  ],
+  "color_legend": {
+    "crack_like_thin_structure": "cyan/turquoise",
+    "pothole_or_major_damage_blob": "red",
+    "suspected_or_uncertain_candidate_zone": "yellow"
+  },
+  "postprocess_parameters": {
+    "min_component_area_pixels": 8,
+    "min_crack_skeleton_pixels": 12,
+    "crack_min_aspect_ratio": 3.0,
+    "crack_max_mean_width_ratio": 0.03,
+    "crack_max_component_area_ratio": 0.035,
+    "major_min_area_ratio": 0.004,
+    "major_min_area_pixels": 120,
+    "major_min_fill_ratio": 0.18,
+    "major_min_mean_width_ratio": 0.045,
+    "suspected_dilation_ratio": 0.012,
+    "suspected_min_dilation_px": 3,
+    "alpha": 0.55
+  },
+  "notes": [
+    "The original v11-compatible API response is not modified by this extension file.",
+    "Crack, major-damage, and suspected regions are heuristic visualization categories derived from the V13 binary output unless a separately trained multi-class model is introduced.",
+    "Suspected area is a candidate/uncertain visualization zone, not a ground-truth class and not a calibrated confidence value.",
+    "This is a research/capstone/prototype road-damage segmentation visualization, not a certified road safety diagnosis or legal/administrative decision system."
+  ]
+}

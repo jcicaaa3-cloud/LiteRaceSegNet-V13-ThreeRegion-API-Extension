@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "error": {
+    "code": "MODEL_RUNTIME_NOT_READY",
+    "message": "V13 runtime files are missing.",
+    "detail": "checkpoint not found: seg/runs/literace_boundary_degradation/best.pth"
+  }
+}

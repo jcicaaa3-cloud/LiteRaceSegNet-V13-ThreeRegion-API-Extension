@@ -1,0 +1,12 @@
+fastapi>=0.110
+uvicorn[standard]>=0.27
+python-multipart>=0.0.9
+pydantic>=2.0
+# V13 service runner dependencies, also listed in requirements_service.txt in the V13 repo:
+torch
+torchvision
+opencv-python
+numpy
+PyYAML
+Pillow
+tqdm

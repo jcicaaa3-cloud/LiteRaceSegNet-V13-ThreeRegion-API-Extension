@@ -1,0 +1,16 @@
+{
+  "request_id": "lrs_20260528_0001",
+  "input_type": "multipart",
+  "file_field": "file",
+  "options": {
+    "return_mask": true,
+    "return_overlay": true,
+    "return_evidence_json": true,
+    "min_area_pixels": 80
+  },
+  "metadata": {
+    "source": "backend_upload",
+    "client_id": "demo_client",
+    "note": "road damage segmentation request"
+  }
+}

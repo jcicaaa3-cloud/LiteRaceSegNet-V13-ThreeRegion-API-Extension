@@ -1,0 +1,63 @@
+openapi: 3.0.3
+info:
+  title: LiteRaceSegNet V13 API Server
+  version: v13-api-ready-addon
+paths:
+  /api/v1/health:
+    get:
+      summary: Check whether V13 API runtime files exist
+  /api/v1/model-info:
+    get:
+      summary: Return V13 model and class mapping metadata
+  /api/v1/road-damage/segment:
+    post:
+      summary: Upload one road image and run LiteRaceSegNet V13 segmentation
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file:
+                  type: string
+                  format: binary
+                request_id:
+                  type: string
+                return_mask:
+                  type: boolean
+                  default: true
+                return_overlay:
+                  type: boolean
+                  default: true
+                return_evidence_json:
+                  type: boolean
+                  default: true
+                min_area_pixels:
+                  type: integer
+                  default: 80
+      responses:
+        '200':
+          description: V13 segmentation result
+        '400':
+          description: Invalid input image
+        '413':
+          description: Upload too large
+        '500':
+          description: V13 runtime error or checkpoint missing
+
+  /api/v1/results/{request_id}/v13-visualization:
+    get:
+      summary: Return separate V13 three-region visualization JSON without changing the v11-compatible segmentation response
+      parameters:
+        - name: request_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: V13 three-region visualization extension JSON
+        '404':
+          description: Extension JSON not found for request_id

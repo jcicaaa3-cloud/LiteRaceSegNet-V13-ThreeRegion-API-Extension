@@ -1,0 +1,4 @@
+Baseline: api_contract/v11_repo_service_summary_baseline.json
+Candidate: api_contract/v11_service_summary_reference_from_repo.json
+OK: v11-compatible JSON paths and field types are preserved.
+No append-only response fields were allowed; this matches separate-extension 방식 B.

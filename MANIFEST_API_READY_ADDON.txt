@@ -1,0 +1,72 @@
+LiteRaceSegNet_V13_API_READY_ADDON
+
+Files:
+- README.md
+- requirements_api.txt
+- app/main.py
+- app/settings.py
+- app/schemas.py
+- app/service_runner.py
+- scripts/RUN_V13_API_SERVER.bat
+- scripts/run_v13_api_server.sh
+- scripts/CHECK_V13_API_READY.bat
+- scripts/test_request_curl.sh
+- scripts/test_request_powershell.ps1
+- api_contract/class_mapping.json
+- api_contract/request_example.json
+- api_contract/response_success_example.json
+- api_contract/response_error_example.json
+- api_contract/openapi_endpoint_summary.yaml
+- docs/API_SERVER_INTEGRATION_GUIDE.md
+- docs/MODEL_USAGE_FOR_BACKEND.md
+- docs/BATCH_INFERENCE_GUIDE.md
+- docs/SAFETY_AND_LIMITATION_NOTE.md
+- docs/V11_JSON_REUSE_POLICY.md
+- docs/REQUEST_RESPONSE_SCHEMA.md
+- legacy_v11_reference/README_LEGACY_JSON_ONLY.md
+
+Excluded:
+- private dataset
+- checkpoints / pretrained weights
+- API keys
+- .env
+- .pem
+- cloud credentials
+- personal environment files
+
+docs/V11_JSON_CONTRACT_LOCK_POLICY.md
+docs/THREE_REGION_VISUALIZATION_WITH_LOCKED_JSON.md
+api_contract/v13_three_region_extension_example.json
+api_contract/response_v11_compat_append_only_example.json
+app/v11_contract_adapter.py
+
+Added in JSON_LOCKED three-region extension:
+- app/three_region_visualization.py
+- scripts/generate_v13_three_region_visualization.py
+- scripts/test_three_region_postprocess_smoke.py
+- scripts/check_v11_contract_lock.py
+- docs/V13_THREE_REGION_VISUALIZATION_RUNBOOK.md
+- docs/V11_JSON_CONTRACT_CHECKLIST.md
+- examples/three_region_smoke_output/README.md
+- examples/three_region_smoke_output/v13_visualization.json
+- examples/three_region_smoke_output/output/crack_mask.png
+- examples/three_region_smoke_output/output/major_damage_mask.png
+- examples/three_region_smoke_output/output/suspected_mask.png
+- examples/three_region_smoke_output/output/three_region_overlay.png
+
+Added in V11 real-baseline contract update:
+- api_contract/v11_response_baseline.json
+- api_contract/v11_response_baseline_source_note.md
+- api_contract/v11_response_baseline.README.md
+- api_contract/v11_response_baseline_check_result.txt
+- api_contract/v11_repo_service_summary_baseline.json
+- api_contract/v11_repo_service_summary_baseline_check_result.txt
+- api_contract/v11_service_summary_reference_from_repo.json
+- api_contract/V11_BASELINE_PROVENANCE.md
+- scripts/test_v11_baseline_contract_smoke.py
+- scripts/test_v11_contract_lock_against_baseline.py
+- docs/V11_BASELINE_CONTRACT_CHECK_RESULTS.md
+- docs/V11_RESPONSE_BASELINE_PROVENANCE.md
+- docs/V11_REAL_RESPONSE_BASELINE_CHECK.md
+- examples/runtime_api/requests/v11_contract_smoke/result.json
+- examples/contract_check_smoke_result.json

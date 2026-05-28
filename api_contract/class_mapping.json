@@ -1,0 +1,5 @@
+{
+  "0": "background",
+  "1": "pothole_or_road_damage",
+  "note": "Keep this mapping synchronized with seg/config/pothole_binary_literace_train.yaml. The V13 config uses class_names: background, pothole."
+}

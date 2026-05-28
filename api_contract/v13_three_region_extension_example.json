@@ -1,0 +1,47 @@
+{
+  "schema_version": "v13_three_region_visualization_0.1",
+  "request_id": "lrs_demo_001",
+  "source_model_version": "v13",
+  "compatibility_baseline": "v11_json_contract_locked",
+  "files": {
+    "crack_mask_path": "runtime_api/requests/lrs_demo_001/output/crack_mask.png",
+    "major_damage_mask_path": "runtime_api/requests/lrs_demo_001/output/major_damage_mask.png",
+    "suspected_mask_path": "runtime_api/requests/lrs_demo_001/output/suspected_mask.png",
+    "three_region_overlay_path": "runtime_api/requests/lrs_demo_001/output/three_region_overlay.png",
+    "v13_visualization_json_path": "runtime_api/requests/lrs_demo_001/v13_visualization.json"
+  },
+  "region_summary": {
+    "image_pixels": 61440,
+    "binary_damage_pixels": 15667,
+    "binary_damage_area_ratio": 0.255,
+    "crack_pixels": 2519,
+    "crack_area_ratio": 0.041,
+    "major_damage_pixels": 13148,
+    "major_damage_area_ratio": 0.214,
+    "suspected_pixels": 3809,
+    "suspected_area_ratio": 0.062
+  },
+  "warnings": [
+    "Three-region labels are visualization/heuristic outputs unless separately trained and validated as multi-class predictions.",
+    "This output is for research/capstone prototype use only."
+  ],
+  "compatibility_mode": "separate_extension_json",
+  "postprocess_basis": "v13_binary_mask_with_morphology_heuristics",
+  "inputs": {
+    "input_image_path": "runtime_api/requests/lrs_demo_001/input/input.jpg",
+    "binary_mask_path": "runtime_api/requests/lrs_demo_001/output/input_service_mask.png",
+    "raw_pred_class_path": "runtime_api/requests/lrs_demo_001/raw_model_output/input_pred_class.png",
+    "probability_source_path": null
+  },
+  "color_legend": {
+    "crack_like_thin_structure": "cyan/turquoise",
+    "pothole_or_major_damage_blob": "red",
+    "suspected_or_uncertain_candidate_zone": "yellow"
+  },
+  "notes": [
+    "The original v11-compatible API response is not modified by this extension file.",
+    "Three-region labels are visualization/heuristic outputs unless separately trained and validated as multi-class predictions.",
+    "Suspected area is a candidate/uncertain visualization zone, not a ground-truth class and not a calibrated confidence value.",
+    "This output is for research/capstone prototype use only."
+  ]
+}

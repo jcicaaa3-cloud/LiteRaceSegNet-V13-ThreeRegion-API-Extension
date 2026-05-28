@@ -1,0 +1,42 @@
+{
+  "image": "assets/service_demo/input_batch/road_001.jpg",
+  "mode": "prediction_mask",
+  "input_mask": "seg/runs/capstone_pred_masks_for_service/road_001.png",
+  "damage_pixels": 1321,
+  "raw_damage_pixels_before_postprocess": 1388,
+  "removed_noise_pixels": 67,
+  "image_pixels": 38400,
+  "area_basis": "full_image_pixels",
+  "damage_ratio": 0.03440104166666667,
+  "damage_ratio_percent": 3.4401,
+  "severity": "medium",
+  "component_count": 1,
+  "components_top10": [
+    {
+      "id": 1,
+      "area_pixels_est": 1321,
+      "bbox_xywh": [
+        42,
+        55,
+        87,
+        31
+      ],
+      "centroid_xy": [
+        85.4,
+        70.2
+      ]
+    }
+  ],
+  "recommendation": "정기 점검 목록 등록 및 확대 여부 추적",
+  "outputs": {
+    "mask": "seg/runs/capstone_batch_service/road_001_service_mask.png",
+    "overlay": "seg/runs/capstone_batch_service/road_001_service_overlay.png",
+    "boundary": "seg/runs/capstone_batch_service/road_001_service_boundary.png",
+    "service_card": "seg/runs/capstone_batch_service/road_001_service_card.png",
+    "summary_csv": "seg/runs/capstone_batch_service/road_001_service_summary.csv"
+  },
+  "elapsed_ms": 23.45,
+  "disclaimer": "mock_demo_not_model_result is for proposal visualization only. Use prediction_mask mode for real model output visualization.",
+  "auto_explanation_ko": "손상 후보 영역은 전체 이미지 기준 약 3.44%로 분석되었으며, 서비스 판정 기준상 중간 수준입니다. 주요 연결 영역은 1개로 추정됩니다. 정기 점검 목록에 등록하고 손상 확대 여부를 추적하는 것이 좋습니다.",
+  "llm_role_note": "CV model or CV heuristic creates the mask and measurements; an LLM should only verbalize this summary if connected."
+}

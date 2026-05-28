@@ -1,0 +1,4 @@
+Baseline: api_contract/v11_response_baseline.json
+Candidate: runtime_api/requests/v11_contract_smoke/result.json
+OK: v11-compatible JSON paths and field types are preserved.
+No append-only response fields were allowed; this matches separate-extension 방식 B.

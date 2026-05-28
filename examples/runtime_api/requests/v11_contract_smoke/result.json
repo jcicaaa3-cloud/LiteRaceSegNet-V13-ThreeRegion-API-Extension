@@ -1,0 +1,82 @@
+{
+  "request_id": "v11_contract_smoke",
+  "status": "success",
+  "model": {
+    "name": "LiteRaceSegNet",
+    "version": "v13",
+    "task": "road_damage_semantic_segmentation",
+    "checkpoint": "seg/runs/literace_boundary_degradation/best.pth"
+  },
+  "input": {
+    "original_filename": "road_001.jpg",
+    "saved_path": "runtime_api/requests/v11_contract_smoke/input/input.jpg",
+    "input_type": "multipart"
+  },
+  "result": {
+    "damage_detected": true,
+    "damage_area_ratio": 0.03440104166666667,
+    "predicted_classes": [
+      {
+        "class_id": 1,
+        "class_name": "pothole_or_road_damage",
+        "area_ratio": 0.03440104166666667
+      }
+    ],
+    "raw_summary": {
+      "image": "runtime_api/requests/v11_contract_smoke/input/input.jpg",
+      "mode": "prediction_mask",
+      "input_mask": "runtime_api/requests/v11_contract_smoke/raw_model_output/input_pred_class.png",
+      "damage_pixels": 1321,
+      "raw_damage_pixels_before_postprocess": 1388,
+      "removed_noise_pixels": 67,
+      "image_pixels": 38400,
+      "area_basis": "full_image_pixels",
+      "damage_ratio": 0.03440104166666667,
+      "damage_ratio_percent": 3.4401,
+      "severity": "medium",
+      "component_count": 1,
+      "components_top10": [
+        {
+          "id": 1,
+          "area_pixels_est": 1321,
+          "bbox_xywh": [
+            42,
+            55,
+            87,
+            31
+          ],
+          "centroid_xy": [
+            85.4,
+            70.2
+          ]
+        }
+      ],
+      "recommendation": "정기 점검 목록 등록 및 확대 여부 추적",
+      "outputs": {
+        "mask": "runtime_api/requests/v11_contract_smoke/output/input_service_mask.png",
+        "overlay": "runtime_api/requests/v11_contract_smoke/output/input_service_overlay.png",
+        "boundary": "runtime_api/requests/v11_contract_smoke/output/input_service_boundary.png",
+        "service_card": "runtime_api/requests/v11_contract_smoke/output/input_service_card.png",
+        "summary_csv": "runtime_api/requests/v11_contract_smoke/output/input_service_summary.csv"
+      },
+      "elapsed_ms": 23.45,
+      "disclaimer": "mock_demo_not_model_result is for proposal visualization only. Use prediction_mask mode for real model output visualization.",
+      "auto_explanation_ko": "손상 후보 영역은 전체 이미지 기준 약 3.44%로 분석되었으며, 서비스 판정 기준상 중간 수준입니다. 주요 연결 영역은 1개로 추정됩니다. 정기 점검 목록에 등록하고 손상 확대 여부를 추적하는 것이 좋습니다.",
+      "llm_role_note": "CV model or CV heuristic creates the mask and measurements; an LLM should only verbalize this summary if connected."
+    }
+  },
+  "files": {
+    "mask_path": "runtime_api/requests/v11_contract_smoke/output/input_service_mask.png",
+    "overlay_path": "runtime_api/requests/v11_contract_smoke/output/input_service_overlay.png",
+    "evidence_json_path": "runtime_api/requests/v11_contract_smoke/output/input_service_summary.json",
+    "request_dir": "runtime_api/requests/v11_contract_smoke"
+  },
+  "runtime": {
+    "device": "server-configured",
+    "latency_ms": 1450.0,
+    "backend_runner": "seg/capstone_batch_service.py"
+  },
+  "warnings": [
+    "This is a pilot-scale research/capstone prototype output, not a certified road safety diagnosis."
+  ]
+}
